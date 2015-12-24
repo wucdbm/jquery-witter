@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="css/jquery.witter.css">
+    <link rel="stylesheet" href="css/fa-4.5.0/css/font-awesome.min.css">
+</head>
+<body>
+
+<a href="javascript:;" class="test">test - callback will put the last faded notification's content into the input fields</a>
+
+<br>
+<br>
+
+<input type="text" id="title" name="title" value="Test notification..."/>
+<input type="checkbox" id="image" name="image" value="Image"/>
+<textarea id="text" name="text" rows="10" style="width: 200px;">This is the notification body...</textarea>
+<textarea id="html" name="html" rows="10" style="width: 200px;"></textarea>
+
+<script src="js/jquery-2.1.4.min.js"></script>
+<script src="js/jquery.witter.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $('.test').click(function () {
+            $.witter({
+                title: $('#title').val(),
+                text: $('#text').val(),
+                html: $('#html').val(),
+                image: $('#image').prop('checked') ? 'img/img.jpg' : null,
+                sticky: true,
+                callbacks: {
+                    before_close: function () {
+                        $('#title').val(this.title());
+                        $('#text').val(this.text());
+                        $('#html').val(this.html());
+                    },
+                    html: function (html) {
+                        return 'Callback has changed html ' + html;
+                    }
+                }
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
