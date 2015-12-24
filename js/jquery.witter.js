@@ -65,7 +65,7 @@
             }
         },
         templates: {
-            close: '<a class="witter-close" href="#" tabindex="1"><i class="fa fa-times"></i></a>',
+            close: '<a class="witter-close" href="javascript:;" tabindex="1"><i class="fa fa-times"></i></a>',
             simple: '<div class="witter-item-simple">{close}<div class="image">{image}</div><div class="witter-title">{title}</div><p class="witter-text">{text}</p></div>',
             item: '<div id="witter-item-{id}" class="witter-item-wrapper {theme} html" style="display:none" role="alert"><div class="witter-item">{html}<div style="clear:both"></div></div></div>',
             wrapper: '<div id="witter-wrappers"></div>'
