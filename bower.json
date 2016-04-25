@@ -1,0 +1,25 @@
+{
+  "name": "jquery-witter",
+  "version": "1.0.0",
+  "homepage": "https://github.com/wucdbm/jquery-witter",
+  "authors": [
+    "Martin Kirilov <wucdbm@gmail.com>"
+  ],
+  "description": "A Gritter-like jQuery notification plugin",
+  "main": "js/jquery.witter.js",
+  "keywords": [
+    "gritter",
+    "witter",
+    "notification",
+    "jquery",
+    "notification"
+  ],
+  "license": "GPL",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
