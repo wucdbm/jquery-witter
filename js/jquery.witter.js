@@ -150,13 +150,17 @@
 
     $(function () {
         $.witter.wrappers = $('#witter-wrappers');
-        if ($.witter.wrappers.length == 0) {
-            $('body').append($.witter.defaults.templates.wrapper);
-            $.witter.wrappers = $($.witter.wrappers.selector);
-            $(['top-right', 'bottom-right', 'bottom-left', 'top-left', 'top', 'bottom']).each(function (index, className) {
-                var div = $('<div/>').addClass('wrapper').addClass(className).appendTo($.witter.wrappers);
-            });
+
+        if ($.witter.wrappers.length > 0) {
+            return;
         }
+
+        $.witter.wrappers = $($.witter.defaults.templates.wrapper);
+        $('body').append($.witter.wrappers);
+        $(['top-right', 'bottom-right', 'bottom-left', 'top-left', 'top', 'bottom']).each(function (index, className) {
+            var wrapper = $('<div/>').addClass('wrapper').addClass(className);
+            $.witter.wrappers.append(wrapper);
+        });
     });
 
     var Witter = function (options) {
